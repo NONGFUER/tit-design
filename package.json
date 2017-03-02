@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "test": "./node_modules/.bin/webpack-dev-server --hot --inline --content-base ."
+    "test": "./node_modules/.bin/webpack-dev-server --hot --inline --content-base .",
+    "dev": "node devServer.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "css-loader": "^0.26.2",
     "eslint": "^3.16.1",
     "eslint-plugin-react": "^6.10.0",
+    "express": "^4.15.0",
     "file-loader": "^0.10.1",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
@@ -53,6 +55,10 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "whatwg-fetch": "^2.0.2"
   }
 }
