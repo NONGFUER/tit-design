@@ -23,7 +23,8 @@ module.exports = {
                     path.resolve(__dirname, 'src'),
                     path.resolve(__dirname, 'docs'),
                 ]   
-            }
+            },
+             { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
         ]
     },
     plugins:[
