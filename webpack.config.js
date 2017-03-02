@@ -4,6 +4,7 @@ var webpack = require("webpack");
 module.exports = {
     entry:{
         app:[
+            'webpack-hot-middleware/client',
             './test/app.js'
         ]
     },
@@ -24,6 +25,9 @@ module.exports = {
                 ]   
             }
         ]
-    }
+    },
+    plugins:[
+        new webpack.HotModuleReplacementPlugin()
+    ]
 
 }
