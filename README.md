@@ -6,4 +6,5 @@ npm install --save-dev babel-loader sass-loader style-loader css-loader react-ho
 npm install --save react react-dom
 npm install --save-dev babel-eslint eslint eslint-plugin-react cross-env
 npm install --save-dev node-sass less less-loader
+npm install --save redux react-router react-router react-router-redux whatwg-fetch
 ``
