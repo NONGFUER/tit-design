@@ -16,12 +16,13 @@ module.exports = {
     module:{
         loaders:[
             {
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 loader: 'babel-loader',
                 include: [
                     path.resolve(__dirname, 'test'),
                     path.resolve(__dirname, 'src'),
                     path.resolve(__dirname, 'docs'),
+                    path.resolve(__dirname, 'src/components/*'),
                 ]   
             },
              { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
@@ -29,6 +30,12 @@ module.exports = {
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    resolve: {
+        alias: {
+            src: path.join(__dirname, "src")
+        },
+        extensions:['.js','.json']
+  }
 
 }

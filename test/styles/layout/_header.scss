@@ -1,7 +1,96 @@
 .header{
-    background-color: blue;
+    background-color: #0072ff;
+    height: 80px;
+    color:white;
+    padding: 0 48px;
+    width: 100%;
 }
 html,body{
     margin:0px;
     height: 100%;
+}
+#app{
+    height: 100%;
+    clear:both;
+}
+.leftNav{
+    width:20%;
+    float: left;
+}
+.main{
+      height: 80%
+}
+.Home{
+    margin-top:50px; 
+    width: 70%;
+   
+    float: left;
+  
+}
+.multi_drop_menu {
+    margin: 30px;
+    .tit-menu {
+        outline: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+        z-index: 1050;
+       // box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        color: rgba(0,0,0,.65);
+        background: #fff;
+        line-height: 46px;
+    }
+    .tit-menu-inline{
+        border-right: 1px solid #e9e9e9;
+        z-index:auto;
+        .tit-menu-submenu-title{
+            margin: 0;
+            position: relative;
+            display: block;
+            white-space: nowrap;
+            padding: 0 16px;
+            font-size: 12px;
+            line-height: 42px;
+            height: 42px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tit-menu-item-selected{
+            background-color: #ecf6fd;
+            color: #108ee9;
+            border-right-color:#108ee9;
+            transform: translateZ(0);
+       }
+    }
+    .tit-menu-item-selected{
+        background-color: #ecf6fd;
+        color: #108ee9;
+        border-right-color:#108ee9;
+        transform: translateZ(0);
+    }
+    .tit-menu-submenu {
+        position: relative;
+    }
+    .tit-menu-item, .tit-menu-submenu, .tit-menu-submenu-title {
+        cursor: pointer;
+        transition: all .3s ease;
+    }
+    .tit-menu-item {
+         padding: 0 40px;
+        line-height: 42px;
+        height: 42px;
+        list-style-type: none;
+        list-style-position: inside;
+        border-right: 3px solid transparent;
+        margin-left: -1px;
+        left: 1px;
+        position: relative;
+        z-index: 1
+    }
+    .tit-menu-hidden{
+        display:none;
+    }
+    li{
+        list-style-type: none;
+    }
 }

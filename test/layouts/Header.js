@@ -4,7 +4,7 @@ class Header extends Component{
     render(){
         return (
             <div className="header">
-               <h1>TIT React</h1>
+               TIT React
             </div>
         )};
 }
