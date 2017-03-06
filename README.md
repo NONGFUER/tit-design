@@ -7,4 +7,5 @@ npm install --save react react-dom
 npm install --save-dev babel-eslint eslint eslint-plugin-react cross-env
 npm install --save-dev node-sass less less-loader
 npm install --save redux react-redux react-router react-router-redux whatwg-fetch
+npm install --save-dev classnames object-assign babel-preset-stage-0
 ``
