@@ -1,8 +1,41 @@
 @import "../../../styles/mixins/mixins";
+@import "../../../styles/themes/_default.scss";
 @mixin make-row($gutter: $grid-gutter-width) {
   position: relative;
   margin-left: ($gutter / -2);
   margin-right: ($gutter / -2);
   height: auto;
   @include clearfix;
+}
+
+//make-grid-columns
+//此方法生成 tit-col-{1~24}
+@mixin make-grid($deviceSize){
+   @for $i from 1 through 24{
+    .#{$tit-prefix}-col#{$deviceSize}-#{$i}{
+      position:relative;
+      min-height:1px;
+      padding-left:0;
+      padding-right:0;
+      float:left;
+      -webkit-box-flex:0;
+      -webkit-flex:0 0 auto;
+      -ms-flex:0 0 auto;
+      flex:0 0 auto;
+      display: block;
+      width: percentage(($i / $grid-columns));
+    }
+    .#{$tit-prefix}-col#{$deviceSize}-push-#{$i}{
+      left:percentage(($i / $grid-columns));
+    }
+    .#{$tit-prefix}-col#{$deviceSize}-pull-#{$i}{
+      right:percentage(($i / $grid-columns));
+    }
+    .#{$tit-prefix}-col#{$deviceSize}-offset-#{$i}{
+      margin-left: percentage(($i / $grid-columns));
+    }
+    .#{$tit-prefix}-col#{$deviceSize}-order-#{$i}{
+      order:$i;
+    }
+  }
 }
