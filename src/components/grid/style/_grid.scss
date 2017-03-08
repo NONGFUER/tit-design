@@ -1,0 +1,7 @@
+@import "mixin";
+@import "../../../styles/themes/_default.scss";
+
+.#{$tit-prefix}-row {
+    @include make-row();
+    display: block;
+}

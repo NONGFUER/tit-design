@@ -4,7 +4,7 @@ var webpack = require("webpack");
 module.exports = {
     entry:{
         app:[
-            'webpack-hot-middleware/client',
+            'webpack-hot-middleware/client?reload=true',
             './test/app.js'
         ]
     },
@@ -28,14 +28,14 @@ module.exports = {
              { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
         ]
     },
-    plugins:[
-        new webpack.HotModuleReplacementPlugin()
-    ],
     resolve: {
         alias: {
             src: path.join(__dirname, "src")
         },
         extensions:['.js','.json']
-  }
+  },
+    plugins:[
+        new webpack.HotModuleReplacementPlugin()
+    ]
 
 }

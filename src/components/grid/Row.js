@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import classNames from 'classnames';
 import assign from 'object-assign';
+import '../../styles/core/_base.scss';
+import './style/_grid.scss';
 /**
  * className?: string;
   gutter?: number;

@@ -7,8 +7,8 @@ class Home extends Component {
             <div className="Home">
                 <h1>rows</h1>
               <Row type="cs" align="middle" style={{ backgroundColor:'grey',height:80}} gutter={10} > 
-                <Col span={12}>col1</Col>
-                <Col span={12}>col2</Col>
+                <Col span={12}>col1111</Col>
+                <Col span={12}>col2122</Col>
               </Row>
 
             </div>
