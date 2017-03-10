@@ -6,8 +6,9 @@ class Home extends Component {
     render(){
         return (
             <div className="Home">
+            <input type="checkbox" />hh
             <h1>Checkbox</h1>
-            <Checkbox>famale</Checkbox>
+            <Checkbox onChange={(v, c) => console.log(v, c)} >female</Checkbox>
             </div>
         )}
 }
