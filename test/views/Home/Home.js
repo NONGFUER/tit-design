@@ -7,7 +7,7 @@ class Home extends Component {
         return (
             <div className="Home">
             <h1>Checkbox</h1>
-            <Checkbox>famale</Checkbox>
+            <Checkbox readOnly={true} checked={true} style={{color:'blue'}}>famale</Checkbox>
             </div>
         )}
 }
