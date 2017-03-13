@@ -8,7 +8,7 @@ class Home extends Component {
             <div className="Home">
             <input type="checkbox" />hh
             <h1>Checkbox</h1>
-            <Checkbox onChange={(v, c) => console.log(v, c)} >female</Checkbox>
+            <Checkbox readOnly={true} checked={true} style={{color:'blue'}}>famale</Checkbox>
             </div>
         )}
 }

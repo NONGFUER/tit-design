@@ -21,44 +21,31 @@ export default class Checkbox extends Component {
     static defaultProps = {
         checkValue: true 
     }
+
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);        
     }
-    handleChange (e,checked){
-        const {readOnly,onChange,checkValue,index} = this.props;
 
-        if(!readOnly &&onChange){
-            checked = e ? e.target.checked : checked;
-            const value = checked ?checkValue : undefined;
-            onChange(value,checked,index);
-        }
-    }
-    getCheckStatus () {
-        const {checked,value,checkValue} = this.props;
-        if(checked !== undefined){
-            return checked;
-        }
-        return value === checkValue;
+    handleChange(e){
+        console.log(e.target.checked + "" + e.target.value);
     }
 
     render(){
-        const {style,className,block,readOnly,checkValue,isIndicator,indeterminate,text,children} = this.props;
-        const checked = this.getCheckStatus();
-
-        let labelClass = classnames(className);
-
-        return(
-            <label style={style} className={labelClass}>
-                <input type="checkbox"
+       const {children,checkValue,checked,style,readOnly} = this.props;
+        let labelClass = classnames(
+            'tit-checkbox'
+        )
+        return (
+            <label style = {style}  className={labelClass}>
+                <input type="checkbox" 
                     disabled = {readOnly}
                     onChange = {this.handleChange}
-                    checked = {checked}
                     value = {checkValue}
+                    checked = {checked}
                 />
                 <span></span>
                 {children}
-            
             </label>
         )
     }
