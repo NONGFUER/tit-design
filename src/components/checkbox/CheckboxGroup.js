@@ -1,7 +1,8 @@
 import React,{Component,PropTypes} from 'react';
 import Checkbox from './Checkbox'
+import ChoiceValue from '../higherOrders/ChioceValue'
 
-export default class CheckboxGroup extends Component{
+class CheckboxGroup extends Component{
     static propTypes = {
         block:PropTypes.bool,
         className:PropTypes.string,
@@ -30,13 +31,14 @@ export default class CheckboxGroup extends Component{
                 {
                     data.map((item,i)=>{
                         return (
-                            <Checkbox key = {i}
+                            <Checkbox key = {item.$key}
                             index = {i}
                             readOnly = {readOnly}
                             block = {checkBlock}
                             onChange = {onChange}
-                            text = {item.text}
-                            checkValue = {item.id}
+                            text = {item.$text}
+                            checkValue = {item.$value}
+                            checked = {item.$checked}
                             >
                             {item.text}
                             </Checkbox>
@@ -48,3 +50,5 @@ export default class CheckboxGroup extends Component{
         );
     }
 }
+
+export default ChoiceValue(CheckboxGroup);
