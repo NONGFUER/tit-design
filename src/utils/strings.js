@@ -10,6 +10,7 @@ export function toArray (value, sep) {
     }else if(sep){
         value = value.map((v) => v.toString());
     }
+    return value;
 }
 
 export function substitute (str,obj){

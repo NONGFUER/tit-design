@@ -27,12 +27,33 @@ export default class Checkbox extends Component {
         this.handleChange = this.handleChange.bind(this);        
     }
 
-    handleChange(e){
-        console.log(e.target.checked + "" + e.target.value);
+    handleChange(e,checked){
+        console.log('原本状态：'+e.target.checked + "--" + e.target.value);
+        const {readOnly, onChange, checkValue, index} = this.props;
+
+        if(!readOnly && onChange){
+            console.log('c是'+checked)
+            checked = e ? e.target.checked : checked;
+            
+            const value = checked ? checkValue : undefined;
+            console.log('c点了之后'+checked+'--'+value)
+            console.log('现在状态：'+e.target.checked + "--" + e.target.value);
+            onChange(value, checked, index)
+             console.log('现在状态1：'+e.target.checked + "--" + e.target.value);
+        }
+    }
+
+    getCheckStatus () {
+        const {value, checked, checkValue} = this.props;
+        if(checked !== undefined) {
+            return checked;
+        }
+        return value === checkValue;
     }
 
     render(){
-       const {children,checkValue,checked,style,readOnly} = this.props;
+       const {children,checkValue,style,readOnly,text} = this.props;
+       const checked = this.getCheckStatus();
         let labelClass = classnames(
             'tit-checkbox'
         )
@@ -45,6 +66,7 @@ export default class Checkbox extends Component {
                     checked = {checked}
                 />
                 <span></span>
+                 {(text) && <span>{text}</span>}
                 {children}
             </label>
         )

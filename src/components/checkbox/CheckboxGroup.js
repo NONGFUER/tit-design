@@ -22,6 +22,7 @@ class CheckboxGroup extends Component{
 
     render(){
         const {style,className,readOnly,block,inline,onChange,data} = this.props;
+        console.log(data);
         let checkBlock = block;
         if(block === undefined && inline !== undefined){
             checkBlock = !inline;
@@ -33,15 +34,14 @@ class CheckboxGroup extends Component{
                         return (
                             <Checkbox key = {item.$key}
                             index = {i}
+                            checked = {item.$checked}
                             readOnly = {readOnly}
                             block = {checkBlock}
                             onChange = {onChange}
                             text = {item.$text}
                             checkValue = {item.$value}
-                            checked = {item.$checked}
-                            >
-                            {item.text}
-                            </Checkbox>
+                            
+                            />
 
                         )
                     }) 

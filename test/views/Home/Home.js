@@ -9,7 +9,7 @@ class Home extends Component {
             <div className="Home">
                 <input type="checkbox" />hh
                 <h1>Checkbox</h1>
-                <Checkbox readOnly={true} checked={true} style={{color:'blue'}}>famale</Checkbox>
+                <Checkbox   style={{color:'blue'}}>famale</Checkbox>
                 <CheckboxGroup value="us,fr" data={[
                     { 'id': 'cn', 'text': 'China' },
                     { 'id': 'us', 'text': 'United States' },
