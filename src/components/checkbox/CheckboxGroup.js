@@ -2,6 +2,7 @@ import React, {Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import update from 'react-update'
 import Checkbox from './Checkbox'
+import shouldComponentUpdate from '../../utils/shouldComponentUpdate'
 
 class CheckboxGroup extends Component{
      constructor(props){
@@ -16,6 +17,9 @@ class CheckboxGroup extends Component{
              selects:nextProps.selects
          })
      }
+
+     shouldComponentUpdate = shouldComponentUpdate
+
      change(...args){
         const selects = this.update(...args)
         this.props.onChange && this.props.onChange(selects);
@@ -92,7 +96,7 @@ class CheckboxGroup extends Component{
                  <Checkbox
                     block = {block}
                     checked = {unSelects.length === 0}
-                    indeterminate = {unSelects.length > 0 && unSelects.lenght < checkboxes.length}
+                    indeterminate = {unSelects.length > 0 && unSelects.length < checkboxes.length}
                     onChange = {::this.toggleAll}
                  >
                     {toggleAllContent}
