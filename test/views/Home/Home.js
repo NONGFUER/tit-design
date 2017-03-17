@@ -6,19 +6,11 @@ import CheckboxGroup from '../../../src/components/Checkbox/CheckboxGroup';
 class Home extends Component {
     render(){
         return (
-            <div className="Home">
+            <div className="Home" >
                 <input type="checkbox" />hh
                 <h1>Checkbox</h1>
                 <Checkbox   style={{color:'blue'}}>famale</Checkbox>
-                <CheckboxGroup value="us,fr" data={[
-                    { 'id': 'cn', 'text': 'China' },
-                    { 'id': 'us', 'text': 'United States' },
-                    { 'id': 'jp', 'text': 'Japan' },
-                    { 'id': 'gb', 'text': 'Great Britain' },
-                    { 'id': 'fr', 'text': 'France' },
-                    { 'id': 'de', 'text': 'Germany' },
-                    { 'id': 'es', 'text': 'Spain' }
-                ]} />
+               <CheckboxGroup toggleable values={['苹果', '三星', '小米']} />
 
             </div>
         )}
