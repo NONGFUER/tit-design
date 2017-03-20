@@ -1,5 +1,6 @@
 import React,{PropTypes} from 'react';
 import classnames from 'classnames';
+import './index.less'
 
 const Checkbox = props => {
     const {
@@ -9,7 +10,7 @@ const Checkbox = props => {
 
     const inputProps = {value, checked, defaultChecked, onChange, disabled } ;
 
-    const classNames = classnames('tit-check',{
+    const classNames = classnames('tit-checkbox',{
         'tit-checkbox-disabled': inputProps.disabled,
         'tit-checkbox-block' : block,
         'tit-checkbox-indeterminate' : indeterminate
