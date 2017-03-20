@@ -26,6 +26,7 @@ module.exports = {
                 ]   
             },
              { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+             { test: /\.less$/, loaders: ['style-loader', 'css-loader', 'sass-loader','less-loader'] },
         ]
     },
     resolve: {
