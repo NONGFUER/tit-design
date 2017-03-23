@@ -1,0 +1,61 @@
+import React,{ PropTypes,Component, Children} from 'react'
+import classnames from 'classnames'
+import './index.less'
+class RadioGroup extends Component{
+    constructor(props){
+        super(props)
+        let value
+        'value' in props && (value = props.value)
+        'defaultValue' in props && (value = props.defaultValue)
+        this.state = { value }
+    }
+    componentWillReceiveProps(nextProps){
+        'value' in nextProps && this.setState({value:nextProps.value})
+    }
+    handleChange(value){
+        this.setState({ value })
+        this.props.onChange&&this.props.onChange(value)
+    }
+    render(){
+        const {className,children,defaultValue,onChange,...others} = this.props;
+        const {value} = this.state;
+        delete others.value
+
+        const radioWithProps = Children.map(children,(Radio,i) => {
+            if(!Radio) return
+            const _value = Radio.props.value;
+            return React.cloneElement(Radio,{
+                key:i,
+                checked:value === _value,
+                onChange:e => {
+                    e.stopPropagation()
+                    this.handleChange(_value)
+                }
+            })
+        });
+        return(
+            <div className={classnames('radios tit-radio-group',className)} {...others}>
+                {radioWithProps}
+            </div>
+        )
+    }
+}
+RadioGroup.propTypes = {
+
+  // 选中的值
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  // 初始化时选中的值（不可控）
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  // 切换选择后的回调。参数为选中的值
+  onChange: PropTypes.func,
+
+  customProp(props) {
+    if ('value' in props && !props.onChange) {
+      return new Error('You provided a `value` prop without an `onChange` handler')
+    }
+  }
+}
+
+export default RadioGroup
