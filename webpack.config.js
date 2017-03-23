@@ -31,7 +31,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            src: path.join(__dirname, "src")
+            src: path.join(__dirname, "src"),
+            components:path.join(__dirname, "src/components")
+
         },
         extensions:['.js','.json']
   },
